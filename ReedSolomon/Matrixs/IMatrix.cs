@@ -50,36 +50,6 @@ public interface IMatrix
     void CodeShards(ReadOnlySpan<byte> inputs, Span<byte> outputs, int blockSize);
 
     /// <summary>
-    /// 使用分片集合执行矩阵乘法
-    /// </summary>
-    /// <param name="inputs">Columns 个数据分片。所有分片长度必须相等。</param>
-    /// <param name="outputs">输出分片，会被写入。若<see cref="IsSquare"/>为: 
-    /// <list type="bullet">
-    /// <item>false:输出冗余分片，数量为 Rows - Columns</item>
-    /// <item>true:输出复原数据分片，数量为 Columns</item>
-    /// </list></param> 
-    /// <exception cref="ArgumentNullException"/> 
-    /// <exception cref="ArgumentException"/> 
-    void CodeShards(ReadOnlyMemory<ReadOnlyMemory<byte>> inputs, ReadOnlyMemory<Memory<byte>> outputs);
-
-    /// <summary>
-    /// 使用分片集合执行矩阵乘法
-    /// </summary>
-    /// <param name="inputs">Columns 个数据分片</param>
-    /// <param name="outputs">输出分片，会被写入。若<see cref="IsSquare"/>为: 
-    /// <list type="bullet">
-    /// <item>false:输出冗余分片，数量为 Rows - Columns</item>
-    /// <item>true:输出复原数据分片，数量为 Columns</item>
-    /// </list>
-    /// 所有分片长度必须至少为 offset + count。
-    /// </param>
-    /// <param name="offset">每个分片的起始字节索引</param>
-    /// <param name="count">每个分片要处理的字节数</param> 
-    /// <exception cref="ArgumentNullException"/> 
-    /// <exception cref="ArgumentException"/> 
-    void CodeShards(IEnumerable<IList<byte>> inputs, IEnumerable<IList<byte>> outputs, int offset, int count);
-
-    /// <summary>
     /// 根据指定的行索引构建子矩阵并求逆。
     /// 用于解码时，根据可用分片的行索引构造恢复矩阵。
     /// </summary>

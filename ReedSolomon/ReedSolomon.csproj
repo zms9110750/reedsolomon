@@ -10,10 +10,10 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 		<Authors>zms9110750</Authors>
-		<PackageProjectUrl>https://github.com/zms9110750/zms9110750Library</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/zms9110750/ReedSolomon</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/zms9110750/ReedSolomon</RepositoryUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Version>0.2.0</Version>
+		<Version>0.2.1</Version>
 		<Title>ReedSolomon冗余算法</Title>
 		<Description>Reed-Solomon Erasure Coding in C#/.NET. Support streaming, memory pool, large files.</Description>
 		<PackageReleaseNotes>修bug。修很多很多bug。
@@ -21,8 +21,15 @@
 rs冗余算法。可以使用流处理。</PackageReleaseNotes>
 		<PackageTags>reedsolomon erasure coding shard parity storage streaming</PackageTags>
 		<PackageOutputPath>C:\Users\16229\source\NugetPack</PackageOutputPath>
-		<PackageReadmeFile>Readme.md</PackageReadmeFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
  
 	<ItemGroup>
 		<PackageReference Include="System.Collections.Immutable" Version="6.0.0" Condition="$(TargetFramework.StartsWith('netstandard'))" />
